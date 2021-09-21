@@ -24,8 +24,12 @@ namespace MongoDbPerformance.Seed
         public override async Task Seed()
         {
             await base.Seed();
+
             await DropNameIndexAsync();
             await CreateNameIndexAsync();
+
+            await DropDateIndexAsync();
+            await CreateDateIndexAsync();
         }
 
         private async Task CreateNameIndexAsync()

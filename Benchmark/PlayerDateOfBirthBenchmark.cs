@@ -9,6 +9,7 @@ namespace MongoDbPerformance.Benchmark
     {
         public PlayerDateOfBirthBenchmark() : base() { }
 
+        [Benchmark]
         public async Task<Player> GetOldestPlayerIndexAsync()
         {
             var sort = Builders<Player>.Sort.Ascending(x => x.DateOfBirth);
@@ -19,6 +20,7 @@ namespace MongoDbPerformance.Benchmark
                 .FirstOrDefaultAsync();
         }
 
+        [Benchmark]
         public async Task<Player> GetOldestPlayerNoIndexAsync()
         {
             var sort = Builders<Player>.Sort.Ascending(x => x.DateOfBirth);
