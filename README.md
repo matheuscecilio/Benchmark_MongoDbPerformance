@@ -1,6 +1,6 @@
 # Benchmark - MongoDbPerformance
 
-Project to test MongoDB performance. There are two collections with 400000 documents. In one of these collections we have a indexes. The idea of this project is to compare performance running queries on both collections. 
+Project to test MongoDB performance. There are two collections with 400000 documents. In one of these collections we have indexes, an in the other doesn't. The idea of this project is to compare performance running queries on both collections. 
 
 To run the project you have:
 - Install MongoDB
