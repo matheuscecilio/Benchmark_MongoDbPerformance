@@ -28,15 +28,15 @@ namespace MongoDbPerformance
             {
                 services.InstalarMongo(hostContext.Configuration);
 
-                Console.WriteLine($"{DateTime.UtcNow} - Inicilizando aplicação de seeds");
-                await AplicarSeeds(hostContext.Configuration, services);
-                Console.WriteLine($"{DateTime.UtcNow} - Finalizada aplicação de seeds");
+                Console.WriteLine($"{DateTime.UtcNow} - Initializing seeds");
+                await ApplySeeds(hostContext.Configuration, services);
+                Console.WriteLine($"{DateTime.UtcNow} - Finishing seeds");
 
                 BenchmarkRunner.Run<PlayerNameBenchmark>();
                 BenchmarkRunner.Run<PlayerDateOfBirthBenchmark>();
             });
 
-        private static async Task AplicarSeeds(
+        private static async Task ApplySeeds(
             IConfiguration configuration,
             IServiceCollection services
         )
